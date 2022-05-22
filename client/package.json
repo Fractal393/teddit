@@ -22,12 +22,13 @@
     "remark-gfm": "^1.0.0",
     "semantic-ui-react": "^2.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "teddit": "file:..",
     "timeago-react": "^3.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors({
-  origin: `http://localhost:${process.env.PORT || "3000"}`,
+  origin: "http://localhost:3000",
   credentials: true,
 }));
 
@@ -34,12 +34,10 @@ mongoose.connect("mongodb://fractal:test@cluster0-shard-00-00.g9jwl.mongodb.net:
   .then(() => console.log("Connected to database."))
   .catch((err) => console.error(err));
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.resolve(__dirname, "build")));
-    app.get("/", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "build", "index.html"));
-    });
-  }
+app.use(express.static(path.resolve(__dirname, "client", "build")));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 app.post('/register', (req, res) => {
   const {email,username} = req.body;
@@ -148,4 +146,4 @@ app.post('/comments', (req, res) => {
     });
 });
 
-app.listen(4000);
+app.listen(process.env.PORT || 3000);
