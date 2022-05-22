@@ -8,6 +8,7 @@ const jwt  = require('jsonwebtoken');
 const User  = require("./models/User.js");
 const Comment  = require("./models/Comment.js");
 const VotingRoutes  = require("./VotingRoutes.js");
+const path = require("path");
 
 const secret = 'secret123';
 const app = express();
