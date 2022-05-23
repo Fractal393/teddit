@@ -7,7 +7,7 @@ function PostsListing() {
   const [comments,setComments] = useState([]);
 
   useEffect(() => {
-    axios.get("https://shrouded-earth-76176.herokuapp.com/comments", {withCredentials:true})
+    axios.get("/comments", {withCredentials:true})
       .then(response => setComments(response.data));
 
   }, []);
