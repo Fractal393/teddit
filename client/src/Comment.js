@@ -13,7 +13,7 @@ function Comment(props) {
   const [userVotes, setUserVotes] = useState(null);
 
   function refreshComments() {
-    axios.get('http://localhost:4000/comments/root/'+props.id)
+    axios.get('/comments/root/'+props.id)
       .then(response => {
         setComments(response.data);
       });
@@ -21,7 +21,7 @@ function Comment(props) {
 
   function refreshVotes() {
     const commentsIds = [comment._id, ...comments.map(c => c._id) ];
-    axios.post('http://localhost:4000/votes', {commentsIds}, {withCredentials:true})
+    axios.post('/votes', {commentsIds}, {withCredentials:true})
       .then(response => {
         setCommentsTotals(response.data.commentsTotals);
         setUserVotes(response.data.userVotes);
@@ -32,7 +32,7 @@ function Comment(props) {
     if (props.comment) {
       setComment(props.comment);
     } else {
-      axios.get('http://localhost:4000/comments/'+props.id)
+      axios.get('/comments/'+props.id)
         .then(response => {
           setComment(response.data);
         });

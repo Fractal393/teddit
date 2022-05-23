@@ -7,7 +7,7 @@ function SearchResultsPage(props) {
   const [comments,setComments] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/comments?search='+text, {withCredentials:true})
+    axios.get('/comments?search='+text, {withCredentials:true})
       .then(response => setComments(response.data));
   }, []);
 

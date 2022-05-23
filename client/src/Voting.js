@@ -21,7 +21,7 @@ function Voting(props) {
     if (directionNumber === userVote) {
       direction = 'unvote';
     }
-    const url = 'http://localhost:4000/vote/'+props.commentId+'/'+direction;
+    const url = '/vote/'+props.commentId+'/'+direction;
     axios.get(url, {withCredentials:true})
       .then(() => {
         rootCommentInfo.refreshVotes();

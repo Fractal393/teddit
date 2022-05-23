@@ -21,7 +21,7 @@ function PostFormModal () {
 
   function createPost() {
     const data = {title,body};
-    axios.post('http://localhost:4000/comments', data, {withCredentials:true})
+    axios.post('/comments', data, {withCredentials:true})
       .then(response => {
         setNewPostId(response.data._id);
       })
