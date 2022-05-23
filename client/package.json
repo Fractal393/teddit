@@ -21,14 +21,13 @@
     "react-scripts": "4.0.3",
     "remark-gfm": "^1.0.0",
     "semantic-ui-react": "^2.1.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "teddit": "file:..",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "timeago-react": "^3.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "tailwind -i src/style.css -o src/tailwind.css && craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

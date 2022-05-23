@@ -1,4 +1,5 @@
-import './style.css';
+// import './style.css';
+import './tailwind.css';
 import AuthModalContext from "./AuthModalContext";
 import {useState,useEffect} from "react";
 import axios from 'axios';
